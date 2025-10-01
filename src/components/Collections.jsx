@@ -6,23 +6,46 @@ const Collections = () => {
 
   const filters = ['All Styles', 'Blackout', 'Sheer', 'Linen', 'Printed', 'Velvet'];
 
-  const collections = [
-    {
-      title: 'Blackout Collection',
-      description: 'Perfect for bedrooms, our blackout curtains ensure complete privacy and light control.',
-      image: 'https://images.unsplash.com/photo-1579975096649-e773e7a42b6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1035&q=80'
-    },
-    {
-      title: 'Sheer Elegance',
-      description: 'Soft, flowing fabrics that filter sunlight while maintaining an airy, open feel.',
-      image: 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80'
-    },
-    {
-      title: 'Linen Collection',
-      description: 'Natural linen curtains offering timeless appeal with a casual, relaxed elegance.',
-      image: 'https://images.unsplash.com/photo-1508022713622-df2d8fb7b4cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80'
-    }
+  const allCollections = [
+    { type: 'Blackout', title: 'Navy Blackout Curtains', description: 'Complete darkness for bedrooms', image: 'https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg' },
+    { type: 'Blackout', title: 'Charcoal Room Darkening', description: 'Modern style with light blocking', image: 'https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg' },
+    { type: 'Blackout', title: 'Black Thermal Curtains', description: 'Energy efficient and stylish', image: 'https://images.pexels.com/photos/1668860/pexels-photo-1668860.jpeg' },
+    { type: 'Blackout', title: 'Gray Blackout Drapes', description: 'Perfect privacy and elegance', image: 'https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg' },
+    { type: 'Blackout', title: 'Dark Brown Curtains', description: 'Rich color with full coverage', image: 'https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg' },
+    { type: 'Blackout', title: 'Slate Blackout Panels', description: 'Contemporary design meets function', image: 'https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg' },
+
+    { type: 'Sheer', title: 'White Sheer Elegance', description: 'Light and airy window treatment', image: 'https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg' },
+    { type: 'Sheer', title: 'Ivory Voile Curtains', description: 'Soft natural light diffusion', image: 'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg' },
+    { type: 'Sheer', title: 'Cream Sheer Panels', description: 'Delicate and sophisticated', image: 'https://images.pexels.com/photos/1909791/pexels-photo-1909791.jpeg' },
+    { type: 'Sheer', title: 'Pearl Sheer Drapes', description: 'Elegant light filtering', image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg' },
+    { type: 'Sheer', title: 'Soft White Sheers', description: 'Create a dreamy ambiance', image: 'https://images.pexels.com/photos/1552617/pexels-photo-1552617.jpeg' },
+    { type: 'Sheer', title: 'Translucent Drapes', description: 'Graceful privacy solution', image: 'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg' },
+
+    { type: 'Linen', title: 'Natural Linen Drapes', description: 'Organic texture and warmth', image: 'https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg' },
+    { type: 'Linen', title: 'Beige Linen Curtains', description: 'Timeless casual elegance', image: 'https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg' },
+    { type: 'Linen', title: 'Sand Linen Panels', description: 'Relaxed sophistication', image: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg' },
+    { type: 'Linen', title: 'Oatmeal Linen Drapes', description: 'Natural fiber beauty', image: 'https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg' },
+    { type: 'Linen', title: 'Flax Linen Curtains', description: 'Eco-friendly and stylish', image: 'https://images.pexels.com/photos/1510595/pexels-photo-1510595.jpeg' },
+    { type: 'Linen', title: 'Wheat Linen Panels', description: 'Warm neutral tones', image: 'https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg' },
+
+    { type: 'Printed', title: 'Floral Print Curtains', description: 'Vibrant botanical patterns', image: 'https://images.pexels.com/photos/1125130/pexels-photo-1125130.jpeg' },
+    { type: 'Printed', title: 'Geometric Design Drapes', description: 'Modern graphic appeal', image: 'https://images.pexels.com/photos/3209045/pexels-photo-3209045.jpeg' },
+    { type: 'Printed', title: 'Abstract Pattern Panels', description: 'Contemporary artistic style', image: 'https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg' },
+    { type: 'Printed', title: 'Striped Curtains', description: 'Classic lines with impact', image: 'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg' },
+    { type: 'Printed', title: 'Damask Print Drapes', description: 'Elegant traditional motifs', image: 'https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg' },
+    { type: 'Printed', title: 'Botanical Print Panels', description: 'Nature-inspired designs', image: 'https://images.pexels.com/photos/1909791/pexels-photo-1909791.jpeg' },
+
+    { type: 'Velvet', title: 'Deep Blue Velvet', description: 'Luxurious rich texture', image: 'https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg' },
+    { type: 'Velvet', title: 'Emerald Velvet Drapes', description: 'Opulent jewel tones', image: 'https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg' },
+    { type: 'Velvet', title: 'Burgundy Velvet Curtains', description: 'Classic elegance and warmth', image: 'https://images.pexels.com/photos/1668860/pexels-photo-1668860.jpeg' },
+    { type: 'Velvet', title: 'Charcoal Velvet Panels', description: 'Sophisticated modern luxury', image: 'https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg' },
+    { type: 'Velvet', title: 'Taupe Velvet Drapes', description: 'Soft neutral opulence', image: 'https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg' },
+    { type: 'Velvet', title: 'Plum Velvet Curtains', description: 'Rich dramatic statement', image: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg' }
   ];
+
+  const filteredCollections = activeFilter === 'All Styles'
+    ? allCollections.slice(0, 6)
+    : allCollections.filter(item => item.type === activeFilter);
 
   return (
     <section id="collections" className="py-16 md:py-24 bg-white">
@@ -53,7 +76,7 @@ const Collections = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {collections.map((collection, index) => (
+          {filteredCollections.map((collection, index) => (
             <div
               key={index}
               className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
