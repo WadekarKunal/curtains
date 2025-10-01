@@ -3,46 +3,49 @@ import React from 'react';
 
 const Gallery = () => {
   const galleryImages = [
-    'https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80',
-    'https://images.unsplash.com/photo-1615529162924-f8605388461d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80',
-    'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
-    'https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
+    { url: 'https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg', type: 'Blackout Curtains' },
+    { url: 'https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg', type: 'Sheer Curtains' },
+    { url: 'https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg', type: 'Modern Living Room' },
+    { url: 'https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg', type: 'Bedroom Curtains' },
+    { url: 'https://images.pexels.com/photos/1552617/pexels-photo-1552617.jpeg', type: 'Elegant Drapes' },
+    { url: 'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg', type: 'Window Treatment' },
+    { url: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg', type: 'Light Filtering' },
+    { url: 'https://images.pexels.com/photos/1909791/pexels-photo-1909791.jpeg', type: 'Classic Style' },
+    { url: 'https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg', type: 'Contemporary' },
+    { url: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg', type: 'Minimalist Design' },
+    { url: 'https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg', type: 'Luxury Curtains' },
+    { url: 'https://images.pexels.com/photos/1668860/pexels-photo-1668860.jpeg', type: 'Cozy Ambiance' }
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section id="gallery" className="py-16 md:py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-900">
             Inspiration Gallery
           </h2>
-          <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-            See how our curtains transform spaces with elegance and style
+          <p className="mt-4 text-lg text-primary-700 max-w-3xl mx-auto">
+            Browse our collection of beautiful curtain installations
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {galleryImages.map((image, index) => (
             <div
               key={index}
-              className="overflow-hidden rounded-lg h-64 hover:shadow-lg transition-shadow duration-300 relative group"
+              className="overflow-hidden rounded-lg h-64 bg-white hover:shadow-xl transition-all duration-300 relative group"
             >
               <img
-                src={image}
-                alt={`Gallery image ${index + 1}`}
+                src={image.url}
+                alt={image.type}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="material-symbols-outlined text-white text-3xl">
-                  zoom_in
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-900/90 via-primary-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                <span className="text-white text-sm font-medium">
+                  {image.type}
                 </span>
               </div>
             </div>
           ))}
-        </div>
-        <div className="text-center mt-10">
-          <button className="px-8 py-3 border border-primary-600 text-primary-600 font-medium rounded-md hover:bg-primary-50 transition-colors duration-300">
-            View More Inspiration
-          </button>
         </div>
       </div>
     </section>

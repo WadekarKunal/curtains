@@ -25,26 +25,26 @@ const Collections = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
+    <section id="collections" className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-900">
             Our Curtain Collection
           </h2>
-          <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="mt-4 text-lg text-primary-700 max-w-3xl mx-auto">
             Browse our versatile range of styles designed to transform your space
           </p>
         </div>
         
-        <div className="flex overflow-x-auto pb-4 mb-8 gap-4 hide-scrollbar">
+        <div className="flex justify-center flex-wrap gap-3 mb-10">
           {filters.map((filter) => (
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`px-6 py-2 rounded-full whitespace-nowrap transition-colors duration-300 ${
+              className={`px-5 py-2 rounded-full whitespace-nowrap transition-all duration-300 text-sm font-medium ${
                 activeFilter === filter
-                  ? 'bg-primary-600 text-white'
-                  : 'bg-white hover:bg-primary-50 text-gray-700 border border-gray-200'
+                  ? 'bg-accent text-white shadow-md'
+                  : 'bg-gray-100 hover:bg-accent-light/30 text-primary-900'
               }`}
             >
               {filter}
@@ -52,13 +52,13 @@ const Collections = () => {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {collections.map((collection, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
+              className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
             >
-              <div className="h-64 overflow-hidden">
+              <div className="h-56 overflow-hidden">
                 <img
                   src={collection.image}
                   alt={collection.title}
@@ -66,26 +66,15 @@ const Collections = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900">
+                <h3 className="text-lg font-semibold text-primary-900">
                   {collection.title}
                 </h3>
-                <p className="mt-2 text-gray-600">{collection.description}</p>
-                <button className="mt-4 text-primary-600 font-medium hover:text-primary-700 flex items-center gap-1 transition-colors duration-300">
-                  View Collection
-                  <span className="material-symbols-outlined text-sm">
-                    arrow_forward
-                  </span>
-                </button>
+                <p className="mt-2 text-sm text-primary-800 leading-relaxed">{collection.description}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-10">
-          <button className="px-8 py-3 bg-primary-600 text-white font-medium rounded-md hover:bg-primary-700 transition-all duration-300 transform hover:scale-105">
-            Browse All Collections
-          </button>
-        </div>
       </div>
     </section>
   );

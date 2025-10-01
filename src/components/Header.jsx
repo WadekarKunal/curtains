@@ -4,69 +4,78 @@ import React, { useState } from 'react';
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: elementPosition - offset,
+        behavior: 'smooth'
+      });
+    }
+    setMobileMenuOpen(false);
+  };
+
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <span className="text-primary-600 text-2xl font-semibold">
+            <span className="text-primary-900 text-2xl font-semibold cursor-pointer" onClick={() => scrollToSection('hero')}>
               ElegantDrapes
             </span>
           </div>
           <nav className="hidden md:flex space-x-8">
-            <a
-              href="#"
-              className="text-gray-700 hover:text-primary-600 transition-colors duration-300 font-medium"
+            <button
+              onClick={() => scrollToSection('hero')}
+              className="text-primary-900 hover:text-accent transition-colors duration-300 font-medium"
             >
               Home
-            </a>
-            <a
-              href="#"
-              className="text-gray-700 hover:text-primary-600 transition-colors duration-300 font-medium"
-            >
-              Collection
-            </a>
-            <a
-              href="#"
-              className="text-gray-700 hover:text-primary-600 transition-colors duration-300 font-medium"
-            >
-              Gallery
-            </a>
-            <a
-              href="#"
-              className="text-gray-700 hover:text-primary-600 transition-colors duration-300 font-medium"
-            >
-              About Us
-            </a>
-            <a
-              href="#"
-              className="text-gray-700 hover:text-primary-600 transition-colors duration-300 font-medium"
-            >
-              Contact
-            </a>
-          </nav>
-          <div className="flex items-center space-x-4">
-            <button className="p-2 text-gray-600 hover:text-primary-600 transition-colors duration-300">
-              <span className="material-symbols-outlined">search</span>
             </button>
             <button
-              className="md:hidden p-2 text-gray-600 hover:text-primary-600 transition-colors duration-300"
+              onClick={() => scrollToSection('collections')}
+              className="text-primary-900 hover:text-accent transition-colors duration-300 font-medium"
+            >
+              Collection
+            </button>
+            <button
+              onClick={() => scrollToSection('gallery')}
+              className="text-primary-900 hover:text-accent transition-colors duration-300 font-medium"
+            >
+              Gallery
+            </button>
+            <button
+              onClick={() => scrollToSection('about')}
+              className="text-primary-900 hover:text-accent transition-colors duration-300 font-medium"
+            >
+              About Us
+            </button>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="text-primary-900 hover:text-accent transition-colors duration-300 font-medium"
+            >
+              Contact
+            </button>
+          </nav>
+          <div className="flex items-center">
+            <button
+              className="md:hidden p-2 text-primary-900 hover:text-accent transition-colors duration-300"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              <span className="material-symbols-outlined">menu</span>
+              <span className="material-symbols-outlined">{mobileMenuOpen ? 'close' : 'menu'}</span>
             </button>
           </div>
         </div>
-        
-        {/* Mobile Menu */}
+
         {mobileMenuOpen && (
           <div className="md:hidden pb-4">
             <nav className="flex flex-col space-y-2">
-              <a href="#" className="text-gray-700 hover:text-primary-600 py-2">Home</a>
-              <a href="#" className="text-gray-700 hover:text-primary-600 py-2">Collection</a>
-              <a href="#" className="text-gray-700 hover:text-primary-600 py-2">Gallery</a>
-              <a href="#" className="text-gray-700 hover:text-primary-600 py-2">About Us</a>
-              <a href="#" className="text-gray-700 hover:text-primary-600 py-2">Contact</a>
+              <button onClick={() => scrollToSection('hero')} className="text-primary-900 hover:text-accent py-2 text-left">Home</button>
+              <button onClick={() => scrollToSection('collections')} className="text-primary-900 hover:text-accent py-2 text-left">Collection</button>
+              <button onClick={() => scrollToSection('gallery')} className="text-primary-900 hover:text-accent py-2 text-left">Gallery</button>
+              <button onClick={() => scrollToSection('about')} className="text-primary-900 hover:text-accent py-2 text-left">About Us</button>
+              <button onClick={() => scrollToSection('contact')} className="text-primary-900 hover:text-accent py-2 text-left">Contact</button>
             </nav>
           </div>
         )}

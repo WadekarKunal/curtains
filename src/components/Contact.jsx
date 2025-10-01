@@ -1,229 +1,103 @@
-// components/Contact.jsx
-import React, { useState } from 'react';
+import React from 'react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    room: '',
-    style: '',
-    message: ''
-  });
-
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [id]: value
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your request! We will contact you soon.');
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      room: '',
-      style: '',
-      message: ''
-    });
-  };
-
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section id="contact" className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12">
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Get a Free Quote
-            </h2>
-            <p className="text-gray-600 mb-8">
-              Ready to transform your space? Fill out the form below, and our experts will get in touch to discuss your custom curtain needs.
-            </p>
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300"
-                    placeholder="Your name"
-                    required
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300"
-                    placeholder="your.email@example.com"
-                    required
-                  />
-                </div>
-              </div>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Phone (optional)
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300"
-                    placeholder="Your phone number"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="room"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Room Type
-                  </label>
-                  <select
-                    id="room"
-                    value={formData.room}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300"
-                    required
-                  >
-                    <option value="">Select a room</option>
-                    <option value="living">Living Room</option>
-                    <option value="bedroom">Bedroom</option>
-                    <option value="dining">Dining Room</option>
-                    <option value="office">Home Office</option>
-                    <option value="kitchen">Kitchen</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-              </div>
-              <div>
-                <label
-                  htmlFor="style"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Curtain Style
-                </label>
-                <select
-                  id="style"
-                  value={formData.style}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300"
-                  required
-                >
-                  <option value="">Select a style</option>
-                  <option value="blackout">Blackout</option>
-                  <option value="sheer">Sheer</option>
-                  <option value="linen">Linen</option>
-                  <option value="printed">Printed</option>
-                  <option value="velvet">Velvet</option>
-                  <option value="not-sure">Not sure yet</option>
-                </select>
-              </div>
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Additional Information
-                </label>
-                <textarea
-                  id="message"
-                  rows="4"
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300"
-                  placeholder="Tell us about your project, including any measurements or specific requirements..."
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="w-full px-6 py-3 bg-primary-600 text-white font-medium rounded-md hover:bg-primary-700 transition-colors duration-300 transform hover:scale-105"
-              >
-                Submit Request
-              </button>
-            </form>
-          </div>
-          <div>
-            <div className="bg-gray-50 p-8 rounded-lg h-full">
-              <h3 className="text-xl font-semibold text-gray-900 mb-6">
-                Contact Information
-              </h3>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
+            Get In Touch
+          </h2>
+          <p className="text-lg text-primary-700 max-w-2xl mx-auto">
+            Ready to transform your space? Contact us for personalized curtain solutions
+          </p>
+        </div>
+
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-gradient-to-br from-primary-50 to-accent-light/20 p-8 md:p-12 rounded-xl shadow-lg">
+            <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <span className="material-symbols-outlined text-primary-600 mr-3">
-                    location_on
-                  </span>
-                  <div>
-                    <h4 className="font-medium text-gray-900">
+                  <div className="flex-shrink-0 w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+                    <span className="material-symbols-outlined text-white">
+                      location_on
+                    </span>
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="text-lg font-semibold text-primary-900 mb-1">
                       Visit Our Showroom
                     </h4>
-                    <p className="text-gray-600">
+                    <p className="text-primary-800">
                       123 Elegance Avenue, Suite 101<br />
                       Styleville, ST 12345
                     </p>
                   </div>
                 </div>
+
                 <div className="flex items-start">
-                  <span className="material-symbols-outlined text-primary-600 mr-3">
-                    schedule
-                  </span>
-                  <div>
-                    <h4 className="font-medium text-gray-900">Opening Hours</h4>
-                    <p className="text-gray-600">
-                      Monday to Friday: 9 AM - 6 PM<br />
-                      Saturday: 10 AM - 4 PM
-                    </p>
+                  <div className="flex-shrink-0 w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+                    <span className="material-symbols-outlined text-white">
+                      schedule
+                    </span>
                   </div>
-                </div>
-                <div className="flex items-start">
-                  <span className="material-symbols-outlined text-primary-600 mr-3">
-                    phone
-                  </span>
-                  <div>
-                    <h4 className="font-medium text-gray-900">Phone</h4>
-                    <p className="text-gray-600">
-                      (555) 123-4567
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <span className="material-symbols-outlined text-primary-600 mr-3">
-                    email
-                  </span>
-                  <div>
-                    <h4 className="font-medium text-gray-900">Email</h4>
-                    <p className="text-gray-600">
-                      info@elegantdrapes.com
+                  <div className="ml-4">
+                    <h4 className="text-lg font-semibold text-primary-900 mb-1">
+                      Opening Hours
+                    </h4>
+                    <p className="text-primary-800">
+                      Monday - Friday: 9 AM - 6 PM<br />
+                      Saturday: 10 AM - 4 PM<br />
+                      Sunday: Closed
                     </p>
                   </div>
                 </div>
               </div>
+
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+                    <span className="material-symbols-outlined text-white">
+                      phone
+                    </span>
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="text-lg font-semibold text-primary-900 mb-1">
+                      Phone
+                    </h4>
+                    <p className="text-primary-800">
+                      (555) 123-4567
+                    </p>
+                    <p className="text-sm text-primary-700 mt-1">
+                      Call us for inquiries
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+                    <span className="material-symbols-outlined text-white">
+                      email
+                    </span>
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="text-lg font-semibold text-primary-900 mb-1">
+                      Email
+                    </h4>
+                    <p className="text-primary-800">
+                      info@elegantdrapes.com
+                    </p>
+                    <p className="text-sm text-primary-700 mt-1">
+                      We respond within 24 hours
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-8 border-t border-primary-200">
+              <p className="text-center text-primary-800">
+                <strong>Free Consultation Available</strong> - Visit our showroom or call us to discuss your curtain needs with our design experts
+              </p>
             </div>
           </div>
         </div>
