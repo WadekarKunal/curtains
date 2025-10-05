@@ -9,13 +9,13 @@ const Contact = () => {
             Get In Touch
           </h2>
           <p className="text-lg text-primary-700 max-w-2xl mx-auto">
-            Ready to transform your space? Contact us for personalized curtain solutions
+            Contact us for wholesale inquiries and bulk orders
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-primary-50 to-accent-light/20 p-8 md:p-12 rounded-xl shadow-lg">
-            <div className="grid md:grid-cols-2 gap-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 mb-8">
+            <div className="bg-gradient-to-br from-primary-50 to-accent-light/20 p-8 rounded-xl shadow-lg">
               <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="flex-shrink-0 w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
@@ -28,8 +28,9 @@ const Contact = () => {
                       Visit Our Showroom
                     </h4>
                     <p className="text-primary-800">
-                      123 Elegance Avenue, Suite 101<br />
-                      Styleville, ST 12345
+                      Shop No. 2391/2392, 2nd Floor, Janta Cloth Market,<br />
+                      Hawker's Plaza, S.B. Marg, Dadar (W),<br />
+                      Mumbai - 400 028
                     </p>
                   </div>
                 </div>
@@ -51,27 +52,6 @@ const Contact = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
-                    <span className="material-symbols-outlined text-white">
-                      phone
-                    </span>
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="text-lg font-semibold text-primary-900 mb-1">
-                      Phone
-                    </h4>
-                    <p className="text-primary-800">
-                      (555) 123-4567
-                    </p>
-                    <p className="text-sm text-primary-700 mt-1">
-                      Call us for inquiries
-                    </p>
-                  </div>
-                </div>
 
                 <div className="flex items-start">
                   <div className="flex-shrink-0 w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
@@ -84,20 +64,51 @@ const Contact = () => {
                       Email
                     </h4>
                     <p className="text-primary-800">
-                      info@elegantdrapes.com
+                      shrimahalaxmienterprises@gmail.com
                     </p>
-                    <p className="text-sm text-primary-700 mt-1">
-                      We respond within 24 hours
-                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+                    <span className="material-symbols-outlined text-white">
+                      phone
+                    </span>
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="text-lg font-semibold text-primary-900 mb-2">
+                      Phone
+                    </h4>
+                    <div className="space-y-2">
+                      <a href="https://wa.me/919029890521" target="_blank" rel="noopener noreferrer" className="flex items-center text-primary-800 hover:text-accent transition-colors">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-5 h-5 mr-2" />
+                        9029890521
+                      </a>
+                      <a href="https://wa.me/919082350836" target="_blank" rel="noopener noreferrer" className="flex items-center text-primary-800 hover:text-accent transition-colors">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-5 h-5 mr-2" />
+                        9082350836
+                      </a>
+                      <a href="https://wa.me/917567413040" target="_blank" rel="noopener noreferrer" className="flex items-center text-primary-800 hover:text-accent transition-colors">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-5 h-5 mr-2" />
+                        7567413040
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 pt-8 border-t border-primary-200">
-              <p className="text-center text-primary-800">
-                <strong>Free Consultation Available</strong> - Visit our showroom or call us to discuss your curtain needs with our design experts
-              </p>
+            <div className="bg-gradient-to-br from-primary-50 to-accent-light/20 p-2 rounded-xl shadow-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3772.2589686934447!2d72.84104367501755!3d19.022731682159936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDAxJzIxLjgiTiA3MsKwNTAnMzcuMCJF!5e0!3m2!1sen!2sin!4v1234567890123"
+                width="100%"
+                height="100%"
+                style={{ border: 0, minHeight: '400px', borderRadius: '0.5rem' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Shri Mahalaxmi Enterprises Location"
+              ></iframe>
             </div>
           </div>
         </div>
